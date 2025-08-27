@@ -30,10 +30,16 @@ public class Kasus2 {
     }
 
     public static void main(String[] args) {
-        ArrayList<Acara> semuaAcara = new ArrayList<>();
-        semuaAcara.add(new Acara(10, 11));
-        semuaAcara.add(new Acara(12, 14));
-        semuaAcara.add(new Acara(15, 16));
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Masukkan banyak Acara: ");
+        int n = sc.nextInt();
+
+        List<Acara> semuaAcara = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            System.out.print("Masukkan waktu mulai-akhir Acara: ");
+            int mulai = sc.nextInt(), akhir = sc.nextInt();
+            semuaAcara.add(new Acara(mulai, akhir));
+        }
 
         if (hasOverlap(semuaAcara)) {
             System.out.println("Ada acara yang bertumpukan.");
